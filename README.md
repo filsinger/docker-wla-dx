@@ -1,4 +1,4 @@
-# Docker container for [wla-dx](https://github.com/vhelin/wla-dx)
+# Docker container for the [wla-dx](https://github.com/vhelin/wla-dx) assembler.
 
 ## Pulling from docker hub
 
@@ -6,7 +6,7 @@
 docker pull filsinger/wla-dx
 ```
 
-### Pulling Version `v10.6`)
+### Pulling Version `v10.6`
 ```sh
 docker pull filsinger/wla-dx:v10.6
 ```
