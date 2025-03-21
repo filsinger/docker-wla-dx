@@ -1,5 +1,6 @@
-FROM debian:buster-slim
-#FROM ubuntu
+FROM debian:bookworm-slim
+
+ARG WLA_DX_BRANCH="master"
 
 RUN apt-get update && apt-get install -y \
     ca-certificates \
@@ -15,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /home/root
 
-RUN git clone https://github.com/vhelin/wla-dx.git
+RUN git clone -b ${WLA_DX_BRANCH} --single-branch https://github.com/vhelin/wla-dx.git
 WORKDIR /home/root/wla-dx
 RUN cmake .
 RUN make
