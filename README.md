@@ -17,8 +17,13 @@ docker pull filsinger/wla-dx:v10.6
 docker run -it --rm filsinger/wla-dx:<version> <command>
 ```
 
+### Example of assembling and linking
+
+Mount the current working directory in the container.
+Assemble files using `wla-6502` and link using `wlalink`.
+
 ```sh
-docker run -it --rm filsinger/wla-dx wla-6502 -M -t -o main.o main.asm
+docker run -v $(pwd):/project -it --rm filsinger/wla-dx bash -c "cd /project && wla-6502 -o main.o main.s && wlalink -v -s linkfile linked.rom"
 ```
 
 ## Building the Image
