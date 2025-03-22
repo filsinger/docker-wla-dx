@@ -23,7 +23,7 @@ Mount the current working directory in the container.
 Assemble files using `wla-6502` and link using `wlalink`.
 
 ```sh
-docker run -v $(pwd):/project -it --rm filsinger/wla-dx bash -c "cd /project && wla-6502 -o main.o main.s && wlalink -v -s linkfile linked.rom"
+docker run -v $(pwd):/project -it --rm filsinger/wla-dx bash -c "wla-6502 -o main.o main.s && wlalink -v -s linkfile linked.rom"
 ```
 
 ## Building the Image
